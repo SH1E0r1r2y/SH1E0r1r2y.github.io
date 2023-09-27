@@ -169,462 +169,356 @@
 <ul>
 <li><code>su bandit[num] </code> 提升權限 ※沒辦法直接跨過 Level</li>
 </ul>
-<h2 id="%E5%9F%BA%E7%A4%8E%E7%B7%B4%E7%BF%92" tabindex="-1">基礎練習</h2>
-<h3 id="level.0" tabindex="-1">Level.0</h3>
-<p>在 powershell 連線<br>
-方式：<code>ssh bandit[num]@bandit.labs.overthewire.org -p 2220</code><br>
-離開連線： <code>exit</code><br>
-連線： ssh <a href="mailto:bandit0@bandit.labs.overthewire.org">bandit0@bandit.labs.overthewire.org</a> -p 2220<br>
-密碼: <strong>bandit0</strong></p>
+<h2 id="基礎練習"><a href="#基礎練習" class="headerlink" title="基礎練習"></a>基礎練習</h2><h3 id="Level-0"><a href="#Level-0" class="headerlink" title="Level.0"></a>Level.0</h3><p>在 powershell 連線<br>方式：<code>ssh bandit[num]@bandit.labs.overthewire.org -p 2220</code><br>離開連線： <code>exit</code><br>連線： ssh <a href="mailto:&#98;&#x61;&#110;&#100;&#x69;&#x74;&#48;&#x40;&#x62;&#x61;&#x6e;&#100;&#105;&#116;&#x2e;&#x6c;&#97;&#98;&#115;&#46;&#x6f;&#x76;&#101;&#x72;&#x74;&#104;&#101;&#x77;&#x69;&#x72;&#x65;&#x2e;&#111;&#x72;&#x67;">&#98;&#x61;&#110;&#100;&#x69;&#x74;&#48;&#x40;&#x62;&#x61;&#x6e;&#100;&#105;&#116;&#x2e;&#x6c;&#97;&#98;&#115;&#46;&#x6f;&#x76;&#101;&#x72;&#x74;&#104;&#101;&#x77;&#x69;&#x72;&#x65;&#x2e;&#111;&#x72;&#x67;</a> -p 2220<br>密碼: <strong>bandit0</strong></p>
 <ol>
 <li><code>ls</code> -&gt; <code>cat readme</code></li>
 </ol>
-<p>=&gt;NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL</p>
-<h3 id="level.1" tabindex="-1">Level.1</h3>
-<ol>
-<li>使用 <code>ls</code>查看所有檔案，發現只有檔案&quot;-&quot;</li>
+<p>&#x3D;&gt;NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL</p>
+<h3 id="Level-1"><a href="#Level-1" class="headerlink" title="Level.1"></a>Level.1</h3><ol>
+<li>使用 <code>ls</code>查看所有檔案，發現只有檔案”-“</li>
 <li>經過<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/42187323/how-to-open-a-dashed-filename-using-terminal">查詢</a>，使用<code>cat ./-</code></li>
 </ol>
-<p>=&gt;rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi</p>
-<h3 id="level.2" tabindex="-1">Level.2</h3>
-<ol>
-<li><code>ls</code> 獲得有空格的檔案名稱：“cat spaces in this filename”</li>
+<p>&#x3D;&gt;rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi</p>
+<h3 id="Level-2"><a href="#Level-2" class="headerlink" title="Level.2"></a>Level.2</h3><ol>
+<li><code>ls</code> 獲得有空格的檔案名稱：”cat spaces in this filename”</li>
 <li>經過<a target="_blank" rel="noopener" href="https://linuxhint.com/reference-filename-with-spaces-linux/">查詢</a>，使用<code>cat spaces\ in\ this\ filename</code></li>
 </ol>
-<p>=&gt; aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG</p>
-<h3 id="level.3" tabindex="-1">Level.3</h3>
-<ol>
-<li><code>ls</code> 後獲得藍色的檔案&quot;inhere&quot;</li>
-<li><code>file inhere</code> =&gt; 顯示為一個 directory</li>
+<p>&#x3D;&gt; aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG</p>
+<h3 id="Level-3"><a href="#Level-3" class="headerlink" title="Level.3"></a>Level.3</h3><ol>
+<li><code>ls</code> 後獲得藍色的檔案”inhere”</li>
+<li><code>file inhere</code> &#x3D;&gt; 顯示為一個 directory</li>
 <li><code>cd inhere</code>  進入資料夾</li>
-<li><code>ls</code> 顯示為空 =&gt;<code>ls -a</code>查詢隱藏檔案 =&gt; 獲得檔案<code>.  ..  .hidden</code></li>
+<li><code>ls</code> 顯示為空 &#x3D;&gt;<code>ls -a</code>查詢隱藏檔案 &#x3D;&gt; 獲得檔案<code>.  ..  .hidden</code></li>
 <li><code>cat ./.hidden</code></li>
 </ol>
-<p>=&gt;2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe</p>
-<h3 id="level.4" tabindex="-1">Level.4</h3>
-<ol>
+<p>&#x3D;&gt;2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe</p>
+<h3 id="Level-4"><a href="#Level-4" class="headerlink" title="Level.4"></a>Level.4</h3><ol>
 <li><code>cd</code> -&gt;<code>ls</code> 後看到一大堆檔案</li>
 <li>試著<code>file ./-file00</code>後得到亂碼</li>
-<li><code>file ./*</code> 查看所有檔案的類型<br>
-<img src="https://hackmd.io/_uploads/Sk1We1KS2.png" alt=""></li>
+<li><code>file ./*</code> 查看所有檔案的類型<br><img src="https://hackmd.io/_uploads/Sk1We1KS2.png"></li>
 </ol>
-<p>4.<code>cat</code> 最可疑的&quot;file07&quot;</p>
-<p>=&gt;lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR</p>
-<h2 id="%E6%9F%A5%E6%89%BE%E6%AA%94%E6%A1%88-%2B-grep" tabindex="-1">查找檔案 + grep</h2>
-<h3 id="level.5" tabindex="-1">Level.5</h3>
-<blockquote>
-<p>The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:<br>
-- human-readable<br>
-- 1033 bytes in size<br>
-- not executable</p>
+<p>4.<code>cat</code> 最可疑的”file07”</p>
+<p>&#x3D;&gt;lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR</p>
+<h2 id="查找檔案-grep"><a href="#查找檔案-grep" class="headerlink" title="查找檔案 + grep"></a>查找檔案 + grep</h2><h3 id="Level-5"><a href="#Level-5" class="headerlink" title="Level.5"></a>Level.5</h3><blockquote>
+<p>The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:<br>    - human-readable<br>    - 1033 bytes in size<br>    - not executable</p>
 </blockquote>
 <ol>
 <li><code>cd</code> -&gt;<code>ls</code> 後看到一大堆檔案</li>
 <li><code>file ./*</code> 只得到一堆 directory</li>
 <li><code>di -sh ./*</code> 也沒辦法</li>
-<li>經過<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-find.html">搜尋</a>，<code>find . - size 1033c</code> 得到位置 ./maybehere07/.file2，<code>cat ./maybehere07/.file2</code>
-<ul>
+<li>經過<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-find.html">搜尋</a>，<code>find . - size 1033c</code> 得到位置 .&#x2F;maybehere07&#x2F;.file2，<code>cat ./maybehere07/.file2</code><ul>
 <li><code>. </code>代表當前目錄</li>
 <li><code>-size [+-]number[cwbkMG]</code>：按文件大小查找，可用 <code>+</code> 、 <code>-</code> 表示大於或小於指定大小，单位可以是 <code>c</code>（bytes）、<code>w</code>（words）、<code>k</code>（KB）、<code>M</code>（MB）或 <code>G</code>（GB）</li>
 </ul>
 </li>
 </ol>
-<p>=&gt;P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU</p>
-<h3 id="level.6" tabindex="-1">Level.6</h3>
-<blockquote>
-<p>The password for the next level is stored somewhere on the server and has all of the following properties:<br>
-- owned by user bandit7<br>
-- owned by group bandit6<br>
-- 33 bytes in size</p>
+<p>&#x3D;&gt;P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU</p>
+<h3 id="Level-6"><a href="#Level-6" class="headerlink" title="Level.6"></a>Level.6</h3><blockquote>
+<p>The password for the next level is stored somewhere on the server and has all of the following properties:<br>    - owned by user bandit7<br>    - owned by group bandit6<br>    - 33 bytes in size</p>
 </blockquote>
 <ol>
 <li><code>cd .. </code>去上一頁，看到超多檔案</li>
-<li>把題目給的條件都打上去<code>find / -type f -user bandit7 -group bandit6 -size 33c</code>，顯示：<img src="https://hackmd.io/_uploads/HkCm-kYB3.png" alt="">
-<ul>
+<li>把題目給的條件都打上去<code>find / -type f -user bandit7 -group bandit6 -size 33c</code>，顯示：<img src="https://hackmd.io/_uploads/HkCm-kYB3.png"><ul>
 <li><code>/</code> ： 在根目錄 <code>/</code></li>
-<li><code>-type f</code> ： 查找所有類型為文件的文件。</li>
-<li><code>-user bandit7</code> ： 查找所有屬於用戶名為 <code>bandit7</code> 的文件。</li>
-<li><code>-group bandit6</code> ： 查找所有所屬組為 <code>bandit6</code> 的文件。</li>
+<li><code>-type f</code> ： 查找所有類型為文件的文件。 </li>
+<li><code>-user bandit7</code> ： 查找所有屬於用戶名為 <code>bandit7</code> 的文件。  </li>
+<li><code>-group bandit6</code> ： 查找所有所屬組為 <code>bandit6</code> 的文件。  </li>
 <li><code>-size 33c</code> ： 查找所有大小為 33 個字節的文件。</li>
 </ul>
 </li>
-<li>使用<code>find / -user bandit7 -group bandit6 -size 33c -type f 2&gt;/dev/null</code>
-<ul>
+<li>使用<code>find / -user bandit7 -group bandit6 -size 33c -type f 2&gt;/dev/null</code><ul>
 <li><code>2&gt;/dev/null</code> - 將錯誤信息重定向到 <code>/dev/null</code>，以便過濾掉不必要的錯誤信息。</li>
 </ul>
 </li>
-<li>使用<code>find / -type f -user bandit7 -group bandit6 -size 33c 2&gt;&amp;1 | grep -Ev &quot;Permission denied&quot; | grep -Ev &quot;No such file or directory&quot;</code>
-<ul>
+<li>使用<code>find / -type f -user bandit7 -group bandit6 -size 33c 2&gt;&amp;1 | grep -Ev &quot;Permission denied&quot; | grep -Ev &quot;No such file or directory&quot;</code><ul>
 <li><code>$()</code>：是一種命令替換語法，用於執行括號內的命令並將其輸出插入到命令行中。</li>
 <li><code>2&gt;&amp;1</code>：是將標準錯誤(<code>stderr</code>)重定向到標準輸出(<code>stdout</code>)</li>
 <li><code>grep -Ev &quot;no such file or directory&quot;</code>：查找匹配並過濾掉包含<code>no such file or directory</code>字樣的行，最後顯示符合條件的文件的路徑。</li>
 </ul>
 </li>
 </ol>
-<h4 id="error" tabindex="-1">error</h4>
-<ol>
-<li>find: paths must precede expression: `-’ 命令格式不正確引起的</li>
-<li>bad substitution：哪裡寫錯了<img src="https://hackmd.io/_uploads/r1r9M1tSn.png" alt=""></li>
+<h4 id="error"><a href="#error" class="headerlink" title="error"></a>error</h4><ol>
+<li>find: paths must precede expression: &#96;-‘ 命令格式不正確引起的</li>
+<li>bad substitution：哪裡寫錯了<img src="https://hackmd.io/_uploads/r1r9M1tSn.png"></li>
 </ol>
-<p>=&gt;z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S</p>
-<h3 id="level.7" tabindex="-1">Level.7</h3>
-<ol>
+<p>&#x3D;&gt;z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S</p>
+<h3 id="Level-7"><a href="#Level-7" class="headerlink" title="Level.7"></a>Level.7</h3><ol>
 <li><code>ls</code> -&gt;<code>cat data.txt</code> 後看到一大堆字串</li>
 <li><code>grep -o millionth data.txt</code>：抓到完全匹配 millionth 的字串</li>
-<li><code>grep -A1 millionth data.txt</code>：抓到完全符合 millionth 之後的一行字串![[Pasted image 20230429002810.png]]<br>
-※更多<a target="_blank" rel="noopener" href="https://tw511.com/a/01/11537.html">詳細資訊</a></li>
+<li><code>grep -A1 millionth data.txt</code>：抓到完全符合 millionth 之後的一行字串![[Pasted image 20230429002810.png]]<br>※更多<a target="_blank" rel="noopener" href="https://tw511.com/a/01/11537.html">詳細資訊</a></li>
 </ol>
-<p>=&gt; TESKZC0XvTetK0S9xNwm25STk5iWrBvP</p>
-<h3 id="level.8" tabindex="-1">Level.8</h3>
-<ol>
-<li><code>ls</code> -&gt;<code>cat data.txt</code> 後看到一大堆字串，題目寫&quot;只出現一次的是密碼‵<s>SCIST 出現過🎉</s>&quot;</li>
-<li><code>cat data.txt | sort | uniq -c |sort</code>，最後一個只有1個密碼的就是
-<ul>
+<p>&#x3D;&gt; TESKZC0XvTetK0S9xNwm25STk5iWrBvP</p>
+<h3 id="Level-8"><a href="#Level-8" class="headerlink" title="Level.8"></a>Level.8</h3><ol>
+<li><code>ls</code> -&gt;<code>cat data.txt</code> 後看到一大堆字串，題目寫”只出現一次的是密碼‵<del>SCIST 出現過🎉</del>“</li>
+<li><code>cat data.txt | sort | uniq -c |sort</code>，最後一個只有1個密碼的就是<ul>
 <li><code>sort</code>將密碼分在一起</li>
 <li><code>uniq -c</code> 來計算排在一起的密碼重複的數量，要-c才會出現數字</li>
-<li>再<code>sort</code>一次，將密碼按照少到多排列<br>
-<img src="https://hackmd.io/_uploads/H1JCfJFrh.png" alt=""></li>
+<li>再<code>sort</code>一次，將密碼按照少到多排列<br><img src="https://hackmd.io/_uploads/H1JCfJFrh.png"></li>
 </ul>
 </li>
 </ol>
-<p>=&gt;EN632PlfYiZbn3PhVK3XOGSlNInNE00t</p>
-<h3 id="level.9" tabindex="-1">Level.9</h3>
-<blockquote>
-<p>The password for the next level is stored in the file data.txt in one of the few human-readable strings, <strong>preceded by several ‘=’ characters</strong>.</p>
+<p>&#x3D;&gt;EN632PlfYiZbn3PhVK3XOGSlNInNE00t</p>
+<h3 id="Level-9"><a href="#Level-9" class="headerlink" title="Level.9"></a>Level.9</h3><blockquote>
+<p>The password for the next level is stored in the file data.txt in one of the few human-readable strings, <strong>preceded by several ‘&#x3D;’ characters</strong>.</p>
 </blockquote>
 <ol>
-<li>從 <strong>error1</strong> 看出 data.txt 不是純 ASCII 文件，包含二進制或不可打印的字符。 <code>strings</code> 用於確定非文本的內容 =&gt; 要獲得人類可讀的字符串，運行 <code>strings data.txt</code></li>
-<li>不是完全符合<code>-o</code>，也不能一行一行讀取，使用<code>grep --heip</code> 看看<br>
-<img src="https://hackmd.io/_uploads/ryCXCSML2.png" alt=""></li>
-<li>使用正則表達式 <code> strings data.txt | grep -E &quot;=&quot;</code> 找到所有匹配=的</li>
+<li>從 <strong>error1</strong> 看出 data.txt 不是純 ASCII 文件，包含二進制或不可打印的字符。 <code>strings</code> 用於確定非文本的內容 &#x3D;&gt; 要獲得人類可讀的字符串，運行 <code>strings data.txt</code></li>
+<li>不是完全符合<code>-o</code>，也不能一行一行讀取，使用<code>grep --heip</code> 看看<br><img src="https://hackmd.io/_uploads/ryCXCSML2.png"></li>
+<li>使用正則表達式 <code> strings data.txt | grep -E &quot;=&quot;</code> 找到所有匹配&#x3D;的</li>
 </ol>
-<p>=&gt; G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s</p>
-<h4 id="error-1" tabindex="-1">error</h4>
-<ol>
-<li><code>grep -A1 = data.txt</code>  =&gt; grep: data.txt: binary file matches<br>
-代表 data.txt 不是純 ASCII 文件，包含二進制或不可打印的字符。 <code>strings</code> 用於確定非文本的內容 =&gt; 要獲得人類可讀的字符串，運行 <code>strings data.txt</code></li>
+<p>&#x3D;&gt; G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s</p>
+<h4 id="error-1"><a href="#error-1" class="headerlink" title="error"></a>error</h4><ol>
+<li><code>grep -A1 = data.txt</code>  &#x3D;&gt; grep: data.txt: binary file matches<br>代表 data.txt 不是純 ASCII 文件，包含二進制或不可打印的字符。 <code>strings</code> 用於確定非文本的內容 &#x3D;&gt; 要獲得人類可讀的字符串，運行 <code>strings data.txt</code> </li>
 <li>網路上沒有搜尋到<code>-Earon</code>的相關資訊(???)</li>
 </ol>
-<h2 id="%E7%B7%A8%E7%A2%BC" tabindex="-1">編碼</h2>
-<h3 id="level.10" tabindex="-1">Level.10</h3>
-<blockquote>
+<h2 id="編碼"><a href="#編碼" class="headerlink" title="編碼"></a>編碼</h2><h3 id="Level-10"><a href="#Level-10" class="headerlink" title="Level.10"></a>Level.10</h3><blockquote>
 <p>The password for the next level is stored in the file data.txt, which contains <strong>base64</strong> encoded data</p>
 </blockquote>
 <ol>
 <li><code>ls</code>+<code>cat</code></li>
 <li><code>base64 -d data.txt</code></li>
 </ol>
-<p>=&gt; 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM</p>
-<h3 id="level.11" tabindex="-1">Level.11</h3>
-<blockquote>
+<p>&#x3D;&gt; 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM</p>
+<h3 id="Level-11"><a href="#Level-11" class="headerlink" title="Level.11"></a>Level.11</h3><blockquote>
 <p>The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been <strong>rotated by 13 positions</strong></p>
 </blockquote>
 <ol>
-<li><code>ls</code>+<code>cat</code>=&gt;Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi</li>
-<li>rot13 + 有大小寫，因此<code> cat data.txt | tr [A-Za-z] [N-ZA-Mn-za-m]</code>，得到 =&gt; <code>The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv</code>
-<ul>
+<li><code>ls</code>+<code>cat</code>&#x3D;&gt;Gur cnffjbeq vf WIAOOSFzMjXXBC0KoSKBbJ8puQm5lIEi</li>
+<li>rot13 + 有大小寫，因此<code> cat data.txt | tr [A-Za-z] [N-ZA-Mn-za-m]</code>，得到 &#x3D;&gt; <code>The password is JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv</code><ul>
 <li>tr [原本的] [要替換的]：轉換或刪除文件裡的字符</li>
 </ul>
 </li>
 </ol>
-<p>&lt;<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1085069/how-can-i-decode-a-file-where-each-letter-has-been-replaced-with-the-letter-13-l">法二</a>&gt;<br>
-<img src="https://hackmd.io/_uploads/Sk6Cu1YH3.png" alt=""><br>
-=&gt;JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv</p>
-<h3 id="level.12" tabindex="-1">Level.12</h3>
-<blockquote>
-<p>The password for the next level is stored in the file data.txt, which is a <strong>hexdump</strong> of a file that has been <strong>repeatedly compressed</strong>. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)</p>
+<p>&lt;<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/1085069/how-can-i-decode-a-file-where-each-letter-has-been-replaced-with-the-letter-13-l">法二</a>&gt;<br><img src="https://hackmd.io/_uploads/Sk6Cu1YH3.png"><br>&#x3D;&gt;JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv</p>
+<h3 id="Level-12"><a href="#Level-12" class="headerlink" title="Level.12"></a>Level.12</h3><blockquote>
+<p>The password for the next level is stored in the file data.txt, which is a <strong>hexdump</strong> of a file that has been <strong>repeatedly compressed</strong>. For this level it may be useful to create a directory under &#x2F;tmp in which you can work using mkdir. For example: mkdir &#x2F;tmp&#x2F;myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)</p>
 </blockquote>
 <ol>
-<li><code>ls</code>+<code>cat</code><br>
-<img src="https://hackmd.io/_uploads/S1YzFQ9B2.png" alt=""><br>
-2.無法直接在原檔案執行 -&gt;在<code>tmp</code>創建一個臨時文件，並複製檔案過來 <img src="https://hackmd.io/_uploads/r1ulcm5rn.png" alt=""></li>
-<li><code>xxd -r filename</code>：可以把二進位原始檔還原。=&gt;<code> xxd -r data.txt data</code><br>
-<img src="https://hackmd.io/_uploads/B1lt9Q5Sh.png" alt=""></li>
-<li>反覆的<code>file</code>、<code>ls</code>、解壓縮
-<ul>
-<li>如果<code>file</code> 得出<code>gzip compressed data</code> =&gt; data是一個gzip壓縮文件<br>
-<img src="https://hackmd.io/_uploads/HkQLtHM8h.png" alt=""></li>
-<li>如果<code>file</code> 得出<code>bzip compressed data</code> =&gt; data是一個bzip壓縮文件<br>
-<img src="https://hackmd.io/_uploads/BJ9VqBzI3.png" alt=""></li>
-<li>如果<code>file</code> 得出<code>POSIX tar archive (GNU)</code> =&gt; data 是一個tar 打包文件<br>
-<img src="https://hackmd.io/_uploads/Bk5-iHf8h.png" alt=""></li>
+<li><code>ls</code>+<code>cat</code><br><img src="https://hackmd.io/_uploads/S1YzFQ9B2.png"><br>2.無法直接在原檔案執行 -&gt;在<code>tmp</code>創建一個臨時文件，並複製檔案過來 <img src="https://hackmd.io/_uploads/r1ulcm5rn.png"></li>
+<li><code>xxd -r filename</code>：可以把二進位原始檔還原。&#x3D;&gt;<code> xxd -r data.txt data</code><br><img src="https://hackmd.io/_uploads/B1lt9Q5Sh.png"></li>
+<li>反覆的<code>file</code>、<code>ls</code>、解壓縮<ul>
+<li>如果<code>file</code> 得出<code>gzip compressed data</code> &#x3D;&gt; data是一個gzip壓縮文件<br> <img src="https://hackmd.io/_uploads/HkQLtHM8h.png"></li>
+<li>如果<code>file</code> 得出<code>bzip compressed data</code> &#x3D;&gt; data是一個bzip壓縮文件<br> <img src="https://hackmd.io/_uploads/BJ9VqBzI3.png"></li>
+<li>如果<code>file</code> 得出<code>POSIX tar archive (GNU)</code> &#x3D;&gt; data 是一個tar 打包文件<br> <img src="https://hackmd.io/_uploads/Bk5-iHf8h.png"></li>
 </ul>
 </li>
 <li>最後得到 ASCII，<code>cat</code>那個檔案</li>
 </ol>
-<p>=&gt; wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw</p>
-<h2 id="%E9%80%A3%E7%B7%9A%E5%95%8F%E9%A1%8C" tabindex="-1">連線問題</h2>
-<h3 id="level.13" tabindex="-1">Level.13</h3>
-<blockquote>
-<p>The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a <strong>private SSH key</strong> that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on<br>
-利用<code>private SSH key</code>連線</p>
+<p>&#x3D;&gt; wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw</p>
+<h2 id="連線問題"><a href="#連線問題" class="headerlink" title="連線問題"></a>連線問題</h2><h3 id="Level-13"><a href="#Level-13" class="headerlink" title="Level.13"></a>Level.13</h3><blockquote>
+<p>The password for the next level is stored in &#x2F;etc&#x2F;bandit_pass&#x2F;bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a <strong>private SSH key</strong> that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on<br>利用<code>private SSH key</code>連線</p>
 </blockquote>
 <ol>
 <li><code>ls</code>+<code>cat</code> -&gt; 提供一個 sshkey.private</li>
 <li><code> ssh bandit14@bandit.labs.overthewire.org -p 2220 -i sshkey.private</code></li>
 <li>找題目提供的位址<code>cat /etc/bandit_pass/bandit14</code></li>
 </ol>
-<p>=&gt; fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq</p>
-<h3 id="level.14" tabindex="-1">Level.14</h3>
-<blockquote>
+<p>&#x3D;&gt; fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq</p>
+<h3 id="Level-14"><a href="#Level-14" class="headerlink" title="Level.14"></a>Level.14</h3><blockquote>
 <p>The password for the next level can be retrieved by submitting the password of the current level to port 30000 <strong>on localhost</strong>.</p>
 </blockquote>
 <ol>
-<li><code>cat /etc/bandit_pass/bandit14</code> =&gt;目前 level 的密碼</li>
-<li><img src="https://hackmd.io/_uploads/Sy_U-LfI2.png" alt="">
-<ul>
+<li><code>cat /etc/bandit_pass/bandit14</code> &#x3D;&gt;目前 level 的密碼</li>
+<li><img src="https://hackmd.io/_uploads/Sy_U-LfI2.png"><ul>
 <li>nc - 具有網路連線能力</li>
 </ul>
 </li>
 </ol>
-<p>&lt;法二&gt;直接輸入<br>
-<img src="https://hackmd.io/_uploads/SkEO-IM8h.png" alt=""><br>
-=&gt; jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt</p>
-<h3 id="level.15" tabindex="-1">Level.15</h3>
-<ol>
+<p>&lt;法二&gt;直接輸入<br><img src="https://hackmd.io/_uploads/SkEO-IM8h.png"><br>&#x3D;&gt; jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt</p>
+<h3 id="Level-15"><a href="#Level-15" class="headerlink" title="Level.15"></a>Level.15</h3><ol>
 <li><code>cat /etc/bandit_pass/bandit15</code></li>
-<li><code>openssl s_client -connect localhost:30001</code><img src="https://hackmd.io/_uploads/SJ77QUfIh.png" alt="">
-<ul>
-<li>s_client - SSL/TLS client program</li>
+<li><code>openssl s_client -connect localhost:30001</code><img src="https://hackmd.io/_uploads/SJ77QUfIh.png"><ul>
+<li>s_client - SSL&#x2F;TLS client program</li>
 </ul>
 </li>
-<li>輸入在1.中得到的<img src="https://hackmd.io/_uploads/rJ4Nm8zU2.png" alt=""></li>
+<li>輸入在1.中得到的<img src="https://hackmd.io/_uploads/rJ4Nm8zU2.png"></li>
 </ol>
-<p>=&gt; JQttfApK4SeyHwDlI9SXGR50qclOAil1</p>
-<h3 id="level.16" tabindex="-1">Level.16</h3>
-<blockquote>
+<p>&#x3D;&gt; JQttfApK4SeyHwDlI9SXGR50qclOAil1</p>
+<h3 id="Level-16"><a href="#Level-16" class="headerlink" title="Level.16"></a>Level.16</h3><blockquote>
 <p>The credentials for the next level can be retrieved by submitting the password of the current level to <strong>a port on localhost in the range 31000 to 32000</strong>. First find out which of these ports have a server listening on them. Then find out which of those <strong>speak SSL</strong> and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.</p>
 </blockquote>
 <ol>
 <li><code>cat /etc/bandit_pass/bandit16</code></li>
-<li><code>nmap -sV -T4 -p 31000-32000 localhost</code>
-<ul>
-<li>nmap - 網絡探索工具和安全/端口掃描器</li>
+<li><code>nmap -sV -T4 -p 31000-32000 localhost</code><ul>
+<li>nmap - 網絡探索工具和安全&#x2F;端口掃描器</li>
 <li>-T4 提高掃描速度</li>
 <li>-p 指定端口</li>
-<li>-sV 識別服務的版本<br>
-<img src="https://hackmd.io/_uploads/HyN1PLfLh.png" alt=""></li>
+<li>-sV 識別服務的版本<br><img src="https://hackmd.io/_uploads/HyN1PLfLh.png"></li>
 </ul>
 </li>
 <li>試試看31518 &amp; 31790 ，輸入這節的密碼，錯誤的只會回傳相同結果 -&gt; 31790 -&gt; 得到私鑰</li>
-<li><code>mktemp</code> -&gt;<code> cd /tmp/</code><img src="https://hackmd.io/_uploads/Sy22NDML3.png" alt=""></li>
+<li><code>mktemp</code> -&gt;<code> cd /tmp/</code><img src="https://hackmd.io/_uploads/Sy22NDML3.png"></li>
 <li><code>ssh bandit17@bandit.labs.overthewire.org -p 2220 -i ./ tmp.moQMvT6GSM</code></li>
 <li><code>cat /etc/bandit_pass/bandit17</code></li>
 </ol>
-<p>=&gt; VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e</p>
-<h2 id="%E5%8A%A0%E5%BC%B7%E7%89%88" tabindex="-1">加強版</h2>
-<h3 id="level.17" tabindex="-1">Level.17</h3>
-<blockquote>
+<p>&#x3D;&gt; VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e</p>
+<h2 id="加強版"><a href="#加強版" class="headerlink" title="加強版"></a>加強版</h2><h3 id="Level-17"><a href="#Level-17" class="headerlink" title="Level.17"></a>Level.17</h3><blockquote>
 <p>There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is <strong>the only line that has been changed between</strong> passwords.old and passwords.new</p>
 </blockquote>
 <ol>
-<li><code>diff passwords.new passwords.old</code>
-<ul>
+<li><code>diff passwords.new passwords.old</code><ul>
 <li>“|”：2个文件内容有不同</li>
 <li>“&lt;”：後面文件比前面文件少了1行内容</li>
-<li>“&gt;”：後面文件比前面文件多了1行内容<br>
-<img src="https://hackmd.io/_uploads/HyeqvvfU3.png" alt=""></li>
+<li>“&gt;”：後面文件比前面文件多了1行内容<br><img src="https://hackmd.io/_uploads/HyeqvvfU3.png"></li>
 </ul>
 </li>
 </ol>
-<p>=&gt;  hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg</p>
-<h3 id="level.18" tabindex="-1">Level.18</h3>
-<blockquote>
+<p>&#x3D;&gt;  hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg</p>
+<h3 id="Level-18"><a href="#Level-18" class="headerlink" title="Level.18"></a>Level.18</h3><blockquote>
 <p>The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has <strong>modified .bashrc to log you out when you log in with SSH.</strong></p>
 </blockquote>
 <ol>
-<li>連線時只能看到伺服器回應&quot;byebye!&quot;
-<ul>
+<li>連線時只能看到伺服器回應”byebye!”<ul>
 <li>bashrc：Linux和Mac OS X終端應用程序使用的Shell文件，存儲了Shell程序的安裝說明</li>
 </ul>
 </li>
-<li>SSH 允許通過在常見的 SSH 表達式後面添加命令來遠程執行命令=&gt;<code>ssh bandit18@bandit.labs.overthewire.org -p 2220 &quot;ls;cat readme&quot;</code></li>
+<li>SSH 允許通過在常見的 SSH 表達式後面添加命令來遠程執行命令&#x3D;&gt;<code>ssh bandit18@bandit.labs.overthewire.org -p 2220 &quot;ls;cat readme&quot;</code></li>
 </ol>
-<p>=&gt;awhqfNnAbc1naukrpqDYcF95h7HoMTrC</p>
-<h2 id="%E7%A8%8B%E5%BC%8F%E5%9F%B7%E8%A1%8C-%2B-cron" tabindex="-1">程式執行 + cron</h2>
-<h3 id="level.19" tabindex="-1">Level.19</h3>
-<blockquote>
-<p>To gain access to the next level, you should use the setuid binary in the homedirectory. <strong>Execute it</strong> without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.</p>
+<p>&#x3D;&gt;awhqfNnAbc1naukrpqDYcF95h7HoMTrC</p>
+<h2 id="程式執行-cron"><a href="#程式執行-cron" class="headerlink" title="程式執行 + cron"></a>程式執行 + cron</h2><h3 id="Level-19"><a href="#Level-19" class="headerlink" title="Level.19"></a>Level.19</h3><blockquote>
+<p>To gain access to the next level, you should use the setuid binary in the homedirectory. <strong>Execute it</strong> without arguments to find out how to use it. The password for this level can be found in the usual place (&#x2F;etc&#x2F;bandit_pass), after you have used the setuid binary.</p>
 </blockquote>
 <ol>
-<li>execute =&gt; 執行<img src="https://hackmd.io/_uploads/HJXDaDfI3.png" alt=""></li>
-<li>發現程式會執行指令<br>
-<img src="https://hackmd.io/_uploads/SkWM0wMI2.png" alt=""></li>
+<li>execute &#x3D;&gt; 執行<img src="https://hackmd.io/_uploads/HJXDaDfI3.png"></li>
+<li>發現程式會執行指令<br><img src="https://hackmd.io/_uploads/SkWM0wMI2.png"></li>
 <li>執行<code> ./bandit20-do cat /etc/bandit_pass/bandit20</code></li>
 </ol>
 <p><strong>error</strong></p>
 <ol>
-<li>bandit19@bandit:~$ cat /etc/bandit_pass/bandit20<br>
-cat: /etc/bandit_pass/bandit20: Permission denied</li>
+<li>bandit19@bandit:~$ cat &#x2F;etc&#x2F;bandit_pass&#x2F;bandit20<br>cat: &#x2F;etc&#x2F;bandit_pass&#x2F;bandit20: Permission denied</li>
 </ol>
-<p>=&gt; VxCazJaVykI6W36BkBU0mJTCM8rR95XT</p>
-<h3 id="level.20" tabindex="-1">Level.20</h3>
-<blockquote>
+<p>&#x3D;&gt; VxCazJaVykI6W36BkBU0mJTCM8rR95XT</p>
+<h3 id="Level-20"><a href="#Level-20" class="headerlink" title="Level.20"></a>Level.20</h3><blockquote>
 <p>There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. <strong>It then reads a line of text from the connection and compares it to the password in the previous level (bandit20)</strong>. If the password is correct, it will transmit the password for the next level (bandit21).</p>
 </blockquote>
 <ol>
-<li><code>echo -n 'VxCazJaVykI6W36BkBU0mJTCM8rR95XT' | nc -l 5137 &amp;</code>
-<ul>
+<li><code>echo -n &#39;VxCazJaVykI6W36BkBU0mJTCM8rR95XT&#39; | nc -l 5137 &amp;</code><ul>
 <li>-n ：防止輸入出現換行符</li>
 </ul>
 </li>
-<li>./suconnect 5137<br>
-<img src="https://hackmd.io/_uploads/SkVJ4dzL3.png" alt=""></li>
+<li>.&#x2F;suconnect 5137<br><img src="https://hackmd.io/_uploads/SkVJ4dzL3.png"></li>
 </ol>
-<p>=&gt;NvEJF7oVjkddltPSrdKEFOllh9V1IBcq</p>
-<h3 id="level.21" tabindex="-1">Level.21</h3>
-<blockquote>
-<p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.</p>
+<p>&#x3D;&gt;NvEJF7oVjkddltPSrdKEFOllh9V1IBcq</p>
+<h3 id="Level-21"><a href="#Level-21" class="headerlink" title="Level.21"></a>Level.21</h3><blockquote>
+<p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in &#x2F;etc&#x2F;cron.d&#x2F; for the configuration and see what command is being executed.</p>
 </blockquote>
 <ol>
-<li><code>cd /etc/cron.d/</code>
-<ul>
+<li><code>cd /etc/cron.d/</code><ul>
 <li>排程（cronjob）:在背景執行<code>.sh </code>的腳本。</li>
 </ul>
 </li>
-<li><img src="https://hackmd.io/_uploads/H1LC8dz82.png" alt="">
-<ul>
+<li><img src="https://hackmd.io/_uploads/H1LC8dz82.png"><ul>
 <li>五顆星表示它每天每分鐘運行一次(<a target="_blank" rel="noopener" href="https://blog.gtwang.org/linux/linux-crontab-cron-job-tutorial-and-examples/">※補充</a>)。具體執行了什麼，要看 bash 文件。</li>
-<li>&amp;&gt; 部分是一個重定向符號，將腳本的所有輸出（包括標準輸出和錯誤輸出）都導向 /dev/null=&gt;所有的輸出都丟棄</li>
+<li>&amp;&gt; 部分是一個重定向符號，將腳本的所有輸出（包括標準輸出和錯誤輸出）都導向 &#x2F;dev&#x2F;null&#x3D;&gt;所有的輸出都丟棄</li>
 </ul>
 </li>
-<li><img src="https://hackmd.io/_uploads/SJuMIdMUh.png" alt=""></li>
+<li><img src="https://hackmd.io/_uploads/SJuMIdMUh.png"></li>
 </ol>
-<p>=&gt; WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff</p>
-<h3 id="level.22" tabindex="-1">Level.22</h3>
-<ol>
+<p>&#x3D;&gt; WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff</p>
+<h3 id="Level-22"><a href="#Level-22" class="headerlink" title="Level.22"></a>Level.22</h3><ol>
 <li><code>cd /etc/cron.d/</code></li>
 <li><code> cat cronjob_bandit23</code></li>
-<li>查看script<img src="https://hackmd.io/_uploads/HJ9c5KGIh.png" alt=""></li>
-<li><code>echo I am user bandit23 | md5sum | cut -d ' ' -f 1</code></li>
-<li><code>cat /tmp/8ca319486bfbbc3663ea0fbe81326349</code><img src="https://hackmd.io/_uploads/ryw83tMUh.png" alt=""></li>
+<li>查看script<img src="https://hackmd.io/_uploads/HJ9c5KGIh.png"></li>
+<li><code>echo I am user bandit23 | md5sum | cut -d &#39; &#39; -f 1</code></li>
+<li><code>cat /tmp/8ca319486bfbbc3663ea0fbe81326349</code><img src="https://hackmd.io/_uploads/ryw83tMUh.png"></li>
 </ol>
-<p>=&gt; QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G</p>
-<h3 id="level.23" tabindex="-1">Level.23</h3>
-<blockquote>
-<p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.<br>
-- NOTE: This level requires you to <strong>create your own first shell-script</strong>. This is a very big step and you should be proud of yourself when you beat this level!<br>
-- NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…</p>
+<p>&#x3D;&gt; QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G</p>
+<h3 id="Level-23"><a href="#Level-23" class="headerlink" title="Level.23"></a>Level.23</h3><blockquote>
+<p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in &#x2F;etc&#x2F;cron.d&#x2F; for the configuration and see what command is being executed.<br>    - NOTE: This level requires you to <strong>create your own first shell-script</strong>. This is a very big step and you should be proud of yourself when you beat this level!<br>    - NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…</p>
 </blockquote>
 <ol>
 <li><code>cd /etc/cron.d/</code></li>
-<li>查看script<img src="https://hackmd.io/_uploads/ByubpFMIn.png" alt=""></li>
-<li>在“tmp”文件夾中創建一個文件<img src="https://hackmd.io/_uploads/rJJHGqMUh.png" alt=""></li>
-<li><code>vim bandit24.sh</code>，內容：<img src="https://hackmd.io/_uploads/rkCDz5GU2.png" alt=""></li>
-<li><code>cp bandit24.sh /var/spool/bandit24/foo/bandit24.sh</code><br>
-<img src="https://hackmd.io/_uploads/r1woMqGIn.png" alt=""></li>
+<li>查看script<img src="https://hackmd.io/_uploads/ByubpFMIn.png"></li>
+<li>在“tmp”文件夾中創建一個文件<img src="https://hackmd.io/_uploads/rJJHGqMUh.png"></li>
+<li><code>vim bandit24.sh</code>，內容：<img src="https://hackmd.io/_uploads/rkCDz5GU2.png"></li>
+<li><code>cp bandit24.sh /var/spool/bandit24/foo/bandit24.sh</code><br><img src="https://hackmd.io/_uploads/r1woMqGIn.png"></li>
 </ol>
-<p>=&gt;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar</p>
-<h3 id="level.24" tabindex="-1">Level.24</h3>
-<blockquote>
+<p>&#x3D;&gt;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar</p>
+<h3 id="Level-24"><a href="#Level-24" class="headerlink" title="Level.24"></a>Level.24</h3><blockquote>
 <p>A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called <strong>brute-forcing</strong>.</p>
 </blockquote>
 <ol>
-<li>先連線看看<br>
-<img src="https://hackmd.io/_uploads/SknbVcMU2.png" alt=""></li>
+<li>先連線看看<br><img src="https://hackmd.io/_uploads/SknbVcMU2.png"></li>
 <li><code> mktemp -d</code>，<code>cd /tmp/tmp.0Aqai3nqU9</code></li>
 <li><code>vim bandit25.py</code>，<code>chmod u+x bandit25.sh</code> ，執行<code>python3 bandit25.py</code></li>
-<li>程式碼：</li>
+<li>程式碼：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">context.log_level = &#x27;debug&#x27;</span><br><span class="line"></span><br><span class="line">r = remote(&#x27;localhost&#x27;, 30002)</span><br><span class="line">r.recvline()</span><br><span class="line"></span><br><span class="line">pin = 0</span><br><span class="line">while pin &lt; 10000:</span><br><span class="line">    pin_str = str(pin).zfill(4)</span><br><span class="line">    r.send(b&#x27;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar &#x27; + pin_str.encode() + b&#x27;\n&#x27;)</span><br><span class="line">    response = r.recvline()</span><br><span class="line">    if b&quot;Wrong&quot; in response:</span><br><span class="line">        print(&quot;Wrong PINCODE:&quot;, pin_str)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;Correct&quot;, pin_str)</span><br><span class="line">        ans = r.recvline()</span><br><span class="line">        print(ans.decode())</span><br><span class="line">        break</span><br><span class="line">    pin += 1</span><br><span class="line">r.clsoe()</span><br></pre></td></tr></table></figure>
+<img src="https://hackmd.io/_uploads/rJtCilQ82.png"><br>&#x3D;&gt;  p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line">from pwn import *</span><br><span class="line"></span><br><span class="line">context.log_level = &#x27;debug&#x27;</span><br><span class="line"></span><br><span class="line">r = remote(&#x27;localhost&#x27;, 30002)</span><br><span class="line">r.recvline()</span><br><span class="line"></span><br><span class="line">pin = 0</span><br><span class="line">while pin &lt; 10000:</span><br><span class="line">    pin_str = str(pin).zfill(4)</span><br><span class="line">    r.send(b&#x27;VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar &#x27; + pin_str.encode() + b&#x27;\n&#x27;)</span><br><span class="line">    response = r.recvline()</span><br><span class="line">    if b&quot;Wrong&quot; in response:</span><br><span class="line">        print(&quot;Wrong PINCODE:&quot;, pin_str)</span><br><span class="line">    else:</span><br><span class="line">        print(&quot;Correct&quot;, pin_str)</span><br><span class="line">        ans = r.recvline()</span><br><span class="line">        print(ans.decode())</span><br><span class="line">        break</span><br><span class="line">    pin += 1</span><br><span class="line">r.clsoe()</span><br></pre></td></tr></table></figure>
-<p><img src="https://hackmd.io/_uploads/rJtCilQ82.png" alt=""><br>
-=&gt;  p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d</p>
-<h2 id="change-shell-%2B-more-%E6%A8%A1%E5%BC%8F" tabindex="-1">change shell + more 模式</h2>
-<h3 id="level.25" tabindex="-1">Level.25</h3>
-<blockquote>
-<p>Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.</p>
+<h2 id="change-shell-more-模式"><a href="#change-shell-more-模式" class="headerlink" title="change shell + more 模式"></a>change shell + more 模式</h2><h3 id="Level-25"><a href="#Level-25" class="headerlink" title="Level.25"></a>Level.25</h3><blockquote>
+<p>Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not &#x2F;bin&#x2F;bash, but something else. Find out what it is, how it works and how to break out of it.</p>
 </blockquote>
 <ol>
 <li><code>ls</code>+<code>cat</code></li>
-<li><code>cat /etc/passwd</code>：查看包含有關設備上用戶的信息以及每個用戶正在使用的 shell。<img src="https://hackmd.io/_uploads/H1NZsfmU3.png" alt=""></li>
-<li><code>cat /usr/bin/showtext</code><img src="https://hackmd.io/_uploads/ryNViMXI3.png" alt=""></li>
-<li><code>ssh -i bandit26.sshkey bandit26@localhost -p 2220</code> -&gt; <code>縮小檔案 + yes</code><img src="https://hackmd.io/_uploads/SyeG54mI3.png" alt="">
-<ul>
-<li>more模式 = <code>more [檔案名稱]</code> = <code> more bandit26.sshkey</code><img src="https://hackmd.io/_uploads/BJEuX4XUh.png" alt=""></li>
+<li><code>cat /etc/passwd</code>：查看包含有關設備上用戶的信息以及每個用戶正在使用的 shell。<img src="https://hackmd.io/_uploads/H1NZsfmU3.png"></li>
+<li><code>cat /usr/bin/showtext</code><img src="https://hackmd.io/_uploads/ryNViMXI3.png"></li>
+<li><code>ssh -i bandit26.sshkey bandit26@localhost -p 2220</code> -&gt; <code>縮小檔案 + yes</code><img src="https://hackmd.io/_uploads/SyeG54mI3.png"><ul>
+<li>more模式 &#x3D; <code>more [檔案名稱]</code> &#x3D; <code> more bandit26.sshkey</code><img src="https://hackmd.io/_uploads/BJEuX4XUh.png"></li>
 </ul>
 </li>
 <li>按下<code>v</code>進入 <code>vim</code></li>
-<li>按下<code>esc</code> + <code>:e /etc/bandit_pass/bandit26</code><br>
-<img src="https://hackmd.io/_uploads/SkMzDVQLh.png" alt=""></li>
+<li>按下<code>esc</code> + <code>:e /etc/bandit_pass/bandit26</code><br><img src="https://hackmd.io/_uploads/SkMzDVQLh.png"></li>
 </ol>
 <p><strong>error</strong></p>
 <ol>
-<li><code>ssh ba ndit0@bandit.labs.overthewire.org -p 2220 -i bandit26.sshkey</code><img src="https://hackmd.io/_uploads/HybatMQIh.png" alt=""></li>
+<li><code>ssh ba ndit0@bandit.labs.overthewire.org -p 2220 -i bandit26.sshkey</code><img src="https://hackmd.io/_uploads/HybatMQIh.png"></li>
 </ol>
-<p>=&gt; c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1</p>
-<h3 id="level.26" tabindex="-1">Level.26</h3>
-<ol>
-<li><code>:set shell=/bin/bash</code>
-<ul>
+<p>&#x3D;&gt; c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1</p>
+<h3 id="Level-26"><a href="#Level-26" class="headerlink" title="Level.26"></a>Level.26</h3><ol>
+<li><code>:set shell=/bin/bash</code><ul>
 <li>set shell：可以更改 user 的 shell</li>
 </ul>
 </li>
-<li><code>:!ls -la</code> + <code>:!./bandit27-do cat /etc/bandit_pass/bandit27</code><br>
-<img src="https://hackmd.io/_uploads/BJHL1wXL3.png" alt=""></li>
+<li><code>:!ls -la</code> + <code>:!./bandit27-do cat /etc/bandit_pass/bandit27</code><br><img src="https://hackmd.io/_uploads/BJHL1wXL3.png"></li>
 </ol>
-<p>=&gt; YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS</p>
-<h2 id="git" tabindex="-1">Git</h2>
-<h3 id="level.27" tabindex="-1">Level.27</h3>
-<blockquote>
-<p>There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.<br>
-Clone the repository and find the password for the next level.</p>
+<p>&#x3D;&gt; YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="Level-27"><a href="#Level-27" class="headerlink" title="Level.27"></a>Level.27</h3><blockquote>
+<p>There is a git repository at ssh:&#x2F;&#x2F;bandit27-git@localhost&#x2F;home&#x2F;bandit27-git&#x2F;repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.<br>Clone the repository and find the password for the next level.</p>
 </blockquote>
 <ol>
-<li>直接<code>git clone</code>不行 =&gt; 建立<code>mktmep</code><img src="https://hackmd.io/_uploads/ry2teDXUn.png" alt=""></li>
-<li><code>git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo</code><img src="https://hackmd.io/_uploads/r1xRxDQI3.png" alt=""></li>
-<li><code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/B1Wf-vXU3.png" alt=""></li>
+<li>直接<code>git clone</code>不行 &#x3D;&gt; 建立<code>mktmep</code><img src="https://hackmd.io/_uploads/ry2teDXUn.png"></li>
+<li><code>git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo</code><img src="https://hackmd.io/_uploads/r1xRxDQI3.png"></li>
+<li><code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/B1Wf-vXU3.png"></li>
 </ol>
-<p>=&gt; AVanL161y9rsbcJIsFHuw35rjaOM19nR</p>
-<h3 id="level.28" tabindex="-1">Level.28</h3>
-<ol>
-<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/HkvJrPQLh.png" alt=""></li>
-<li>查看日誌檢查歷史紀錄<code>git log</code><img src="https://hackmd.io/_uploads/Bkt7dv7L3.png" alt=""></li>
-<li>fix info leak(修復洩漏)看起來很可疑=&gt;<code>git show xxxxx</code><img src="https://hackmd.io/_uploads/SJ_k_v7U2.png" alt=""></li>
+<p>&#x3D;&gt; AVanL161y9rsbcJIsFHuw35rjaOM19nR</p>
+<h3 id="Level-28"><a href="#Level-28" class="headerlink" title="Level.28"></a>Level.28</h3><ol>
+<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/HkvJrPQLh.png"></li>
+<li>查看日誌檢查歷史紀錄<code>git log</code><img src="https://hackmd.io/_uploads/Bkt7dv7L3.png"></li>
+<li>fix info leak(修復洩漏)看起來很可疑&#x3D;&gt;<code>git show xxxxx</code><img src="https://hackmd.io/_uploads/SJ_k_v7U2.png"></li>
 </ol>
-<p>=&gt; tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S</p>
-<h3 id="level.29" tabindex="-1">Level.29</h3>
-<ol>
-<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/HklHFDX82.png" alt=""></li>
-<li><code>git branch -a</code><img src="https://hackmd.io/_uploads/BJJyeu7I3.png" alt="">
-<ul>
+<p>&#x3D;&gt; tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S</p>
+<h3 id="Level-29"><a href="#Level-29" class="headerlink" title="Level.29"></a>Level.29</h3><ol>
+<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/HklHFDX82.png"></li>
+<li><code>git branch -a</code><img src="https://hackmd.io/_uploads/BJJyeu7I3.png"><ul>
 <li>-a:all 的意思，會列出所有的分支，包括已刪除的分支和遠端分支，以及本地分支</li>
 </ul>
 </li>
-<li><code>git checkout dev</code> -&gt;<code>git branch</code> -&gt; <code>ls</code> -&gt;<code>cat</code><img src="https://hackmd.io/_uploads/SkMnxOQL2.png" alt=""></li>
+<li><code>git checkout dev</code> -&gt;<code>git branch</code> -&gt; <code>ls</code> -&gt;<code>cat</code><img src="https://hackmd.io/_uploads/SkMnxOQL2.png"></li>
 </ol>
-<p>=&gt; xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS</p>
-<h3 id="level.30" tabindex="-1">Level.30</h3>
-<ol>
-<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/ry7IWdQL3.png" alt=""></li>
-<li><code>git --help</code><img src="https://hackmd.io/_uploads/S108GdQIn.png" alt=""></li>
-<li><code>git tag</code><img src="https://hackmd.io/_uploads/S1vyf_QU2.png" alt="">
-<ul>
+<p>&#x3D;&gt; xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS</p>
+<h3 id="Level-30"><a href="#Level-30" class="headerlink" title="Level.30"></a>Level.30</h3><ol>
+<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/ry7IWdQL3.png"></li>
+<li><code>git --help</code><img src="https://hackmd.io/_uploads/S108GdQIn.png"></li>
+<li><code>git tag</code><img src="https://hackmd.io/_uploads/S1vyf_QU2.png"><ul>
 <li>標籤（Tag）:用於標記特定的提交（commit）的靜態參考點。它們通常用於標識重要的里程碑、版本發布或任何其他有意義的點。</li>
 </ul>
 </li>
 <li><code> git show secret</code></li>
 </ol>
-<p>=&gt; OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt</p>
-<h3 id="level.31" tabindex="-1">Level.31</h3>
-<ol>
-<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/Sk2vmumIh.png" alt=""></li>
+<p>&#x3D;&gt; OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt</p>
+<h3 id="Level-31"><a href="#Level-31" class="headerlink" title="Level.31"></a>Level.31</h3><ol>
+<li>建立<code>mktmep</code> + <code>ls</code> + <code>cd</code> +<code>cat</code><img src="https://hackmd.io/_uploads/Sk2vmumIh.png"></li>
 <li><code>echo &quot;May I come in?&quot; &gt; key.txt</code></li>
-<li><code>git status</code><img src="https://hackmd.io/_uploads/BkvuPO7L3.png" alt=""></li>
-<li><code> git add key.txt</code> -&gt; <code>git add -f key.txt</code><img src="https://hackmd.io/_uploads/HJ9TddX8n.png" alt=""></li>
-<li><code> git commit -m “up”</code><img src="https://hackmd.io/_uploads/HyJNKOmU3.png" alt=""></li>
-<li><code>git push origin master</code> &lt;- status 在master<img src="https://hackmd.io/_uploads/HkGXLdmIn.png" alt=""></li>
+<li><code>git status</code><img src="https://hackmd.io/_uploads/BkvuPO7L3.png"></li>
+<li><code> git add key.txt</code> -&gt; <code>git add -f key.txt</code><img src="https://hackmd.io/_uploads/HJ9TddX8n.png"></li>
+<li><code> git commit -m “up”</code><img src="https://hackmd.io/_uploads/HyJNKOmU3.png"></li>
+<li><code>git push origin master</code> &lt;- status 在master<img src="https://hackmd.io/_uploads/HkGXLdmIn.png"></li>
 </ol>
-<p>=&gt; rmCBvG56y58BXzv98yZGdO7ATVL5dW8y</p>
-<h3 id="level.32" tabindex="-1">Level.32</h3>
-<ol>
-<li>目前是一個互動式的 shell<br>
-<img src="https://hackmd.io/_uploads/S1hvqdQIn.png" alt=""></li>
+<p>&#x3D;&gt; rmCBvG56y58BXzv98yZGdO7ATVL5dW8y</p>
+<h3 id="Level-32"><a href="#Level-32" class="headerlink" title="Level.32"></a>Level.32</h3><ol>
+<li>目前是一個互動式的 shell<br><img src="https://hackmd.io/_uploads/S1hvqdQIn.png"></li>
 <li><code>$0</code>:返回正在運行的腳本的名稱，包括路徑和檔案名稱；幫助使用者走出交互模式</li>
 <li><code>cat /etc/bandit_pass/bandit33</code></li>
 </ol>
-<p>=&gt; odHo63fHiFqcWWJG9rLiLDtPm45KzUKy</p>
-<h3 id="level.33" tabindex="-1">Level.33</h3>
-<p><img src="https://hackmd.io/_uploads/rJSJpd783.png" alt=""></p>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">sherry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/06/27/wargames/">http://example.com/2023/06/27/wargames/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記"><div class="cover" style="background: /img/12.jpgg"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">林林總總環境筆記</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/27/hello-world/" title="Hello World"><img class="cover" src="/img/12.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享"><img class="cover" src="/img/bac.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-27</div><div class="title">CEH v12 報考心得&amp;想法分享</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sherry</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E7%B7%B4%E7%BF%92"><span class="toc-number">1.</span> <span class="toc-text">基礎練習</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.0"><span class="toc-number">1.1.</span> <span class="toc-text">Level.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.1"><span class="toc-number">1.2.</span> <span class="toc-text">Level.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.2"><span class="toc-number">1.3.</span> <span class="toc-text">Level.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.3"><span class="toc-number">1.4.</span> <span class="toc-text">Level.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.4"><span class="toc-number">1.5.</span> <span class="toc-text">Level.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%AA%94%E6%A1%88-+-grep"><span class="toc-number">2.</span> <span class="toc-text">查找檔案 + grep</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.5"><span class="toc-number">2.1.</span> <span class="toc-text">Level.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.6"><span class="toc-number">2.2.</span> <span class="toc-text">Level.6</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#error"><span class="toc-number">2.2.1.</span> <span class="toc-text">error</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.7"><span class="toc-number">2.3.</span> <span class="toc-text">Level.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.8"><span class="toc-number">2.4.</span> <span class="toc-text">Level.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.9"><span class="toc-number">2.5.</span> <span class="toc-text">Level.9</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#error-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">error</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%A8%E7%A2%BC"><span class="toc-number">3.</span> <span class="toc-text">編碼</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.10"><span class="toc-number">3.1.</span> <span class="toc-text">Level.10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.11"><span class="toc-number">3.2.</span> <span class="toc-text">Level.11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.12"><span class="toc-number">3.3.</span> <span class="toc-text">Level.12</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%A3%E7%B7%9A%E5%95%8F%E9%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">連線問題</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.13"><span class="toc-number">4.1.</span> <span class="toc-text">Level.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.14"><span class="toc-number">4.2.</span> <span class="toc-text">Level.14</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.15"><span class="toc-number">4.3.</span> <span class="toc-text">Level.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.16"><span class="toc-number">4.4.</span> <span class="toc-text">Level.16</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%BC%B7%E7%89%88"><span class="toc-number">5.</span> <span class="toc-text">加強版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.17"><span class="toc-number">5.1.</span> <span class="toc-text">Level.17</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.18"><span class="toc-number">5.2.</span> <span class="toc-text">Level.18</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BC%8F%E5%9F%B7%E8%A1%8C-+-cron"><span class="toc-number">6.</span> <span class="toc-text">程式執行 + cron</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.19"><span class="toc-number">6.1.</span> <span class="toc-text">Level.19</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.20"><span class="toc-number">6.2.</span> <span class="toc-text">Level.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.21"><span class="toc-number">6.3.</span> <span class="toc-text">Level.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.22"><span class="toc-number">6.4.</span> <span class="toc-text">Level.22</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.23"><span class="toc-number">6.5.</span> <span class="toc-text">Level.23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.24"><span class="toc-number">6.6.</span> <span class="toc-text">Level.24</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#change-shell-+-more-%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">change shell + more 模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.25"><span class="toc-number">7.1.</span> <span class="toc-text">Level.25</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.26"><span class="toc-number">7.2.</span> <span class="toc-text">Level.26</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-number">8.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#level.27"><span class="toc-number">8.1.</span> <span class="toc-text">Level.27</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.28"><span class="toc-number">8.2.</span> <span class="toc-text">Level.28</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.29"><span class="toc-number">8.3.</span> <span class="toc-text">Level.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.30"><span class="toc-number">8.4.</span> <span class="toc-text">Level.30</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.31"><span class="toc-number">8.5.</span> <span class="toc-text">Level.31</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.32"><span class="toc-number">8.6.</span> <span class="toc-text">Level.32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#level.33"><span class="toc-number">8.7.</span> <span class="toc-text">Level.33</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/27/MSServer/" title="MS SQL server 基礎知識整理"><img src="/img/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MS SQL server 基礎知識整理"/></a><div class="content"><a class="title" href="/2023/09/27/MSServer/" title="MS SQL server 基礎知識整理">MS SQL server 基礎知識整理</a><time datetime="2023-09-27T07:47:03.000Z" title="Created 2023-09-27 15:47:03">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享"><img src="/img/bac.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CEH v12 報考心得&amp;想法分享"/></a><div class="content"><a class="title" href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享">CEH v12 報考心得&amp;想法分享</a><time datetime="2023-08-27T04:37:57.000Z" title="Created 2023-08-27 12:37:57">2023-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記"><div style="background: /img/12.jpgg"></div></a><div class="content"><a class="title" href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記">林林總總環境筆記</a><time datetime="2023-07-06T16:45:35.000Z" title="Created 2023-07-07 00:45:35">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/27/wargames/" title="bandit wargames"><img src="/img/bac.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="bandit wargames"/></a><div class="content"><a class="title" href="/2023/06/27/wargames/" title="bandit wargames">bandit wargames</a><time datetime="2023-06-26T16:24:08.000Z" title="Created 2023-06-27 00:24:08">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/27/hello-world/" title="Hello World"><img src="/img/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2023/05/27/hello-world/" title="Hello World">Hello World</a><time datetime="2023-05-26T16:24:08.000Z" title="Created 2023-05-27 00:24:08">2023-05-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By sherry</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
+<p>&#x3D;&gt; odHo63fHiFqcWWJG9rLiLDtPm45KzUKy</p>
+<h3 id="Level-33"><a href="#Level-33" class="headerlink" title="Level.33"></a>Level.33</h3><p><img src="https://hackmd.io/_uploads/rJSJpd783.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">sherry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/06/27/wargames/">http://example.com/2023/06/27/wargames/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記"><div class="cover" style="background: /img/12.jpgg"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">林林總總環境筆記</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/27/hello-world/" title="Hello World"><img class="cover" src="/img/12.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Hello World</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享"><img class="cover" src="/img/bac.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-27</div><div class="title">CEH v12 報考心得&amp;想法分享</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/logo.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sherry</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A4%8E%E7%B7%B4%E7%BF%92"><span class="toc-number">1.</span> <span class="toc-text">基礎練習</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-0"><span class="toc-number">1.1.</span> <span class="toc-text">Level.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-1"><span class="toc-number">1.2.</span> <span class="toc-text">Level.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-2"><span class="toc-number">1.3.</span> <span class="toc-text">Level.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-3"><span class="toc-number">1.4.</span> <span class="toc-text">Level.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-4"><span class="toc-number">1.5.</span> <span class="toc-text">Level.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%AA%94%E6%A1%88-grep"><span class="toc-number">2.</span> <span class="toc-text">查找檔案 + grep</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-5"><span class="toc-number">2.1.</span> <span class="toc-text">Level.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-6"><span class="toc-number">2.2.</span> <span class="toc-text">Level.6</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#error"><span class="toc-number">2.2.1.</span> <span class="toc-text">error</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-7"><span class="toc-number">2.3.</span> <span class="toc-text">Level.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-8"><span class="toc-number">2.4.</span> <span class="toc-text">Level.8</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-9"><span class="toc-number">2.5.</span> <span class="toc-text">Level.9</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#error-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">error</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B7%A8%E7%A2%BC"><span class="toc-number">3.</span> <span class="toc-text">編碼</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-10"><span class="toc-number">3.1.</span> <span class="toc-text">Level.10</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-11"><span class="toc-number">3.2.</span> <span class="toc-text">Level.11</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-12"><span class="toc-number">3.3.</span> <span class="toc-text">Level.12</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%A3%E7%B7%9A%E5%95%8F%E9%A1%8C"><span class="toc-number">4.</span> <span class="toc-text">連線問題</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-13"><span class="toc-number">4.1.</span> <span class="toc-text">Level.13</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-14"><span class="toc-number">4.2.</span> <span class="toc-text">Level.14</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-15"><span class="toc-number">4.3.</span> <span class="toc-text">Level.15</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-16"><span class="toc-number">4.4.</span> <span class="toc-text">Level.16</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%BC%B7%E7%89%88"><span class="toc-number">5.</span> <span class="toc-text">加強版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-17"><span class="toc-number">5.1.</span> <span class="toc-text">Level.17</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-18"><span class="toc-number">5.2.</span> <span class="toc-text">Level.18</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BC%8F%E5%9F%B7%E8%A1%8C-cron"><span class="toc-number">6.</span> <span class="toc-text">程式執行 + cron</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-19"><span class="toc-number">6.1.</span> <span class="toc-text">Level.19</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-20"><span class="toc-number">6.2.</span> <span class="toc-text">Level.20</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-21"><span class="toc-number">6.3.</span> <span class="toc-text">Level.21</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-22"><span class="toc-number">6.4.</span> <span class="toc-text">Level.22</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-23"><span class="toc-number">6.5.</span> <span class="toc-text">Level.23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-24"><span class="toc-number">6.6.</span> <span class="toc-text">Level.24</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#change-shell-more-%E6%A8%A1%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">change shell + more 模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-25"><span class="toc-number">7.1.</span> <span class="toc-text">Level.25</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-26"><span class="toc-number">7.2.</span> <span class="toc-text">Level.26</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">8.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-27"><span class="toc-number">8.1.</span> <span class="toc-text">Level.27</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-28"><span class="toc-number">8.2.</span> <span class="toc-text">Level.28</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-29"><span class="toc-number">8.3.</span> <span class="toc-text">Level.29</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-30"><span class="toc-number">8.4.</span> <span class="toc-text">Level.30</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-31"><span class="toc-number">8.5.</span> <span class="toc-text">Level.31</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-32"><span class="toc-number">8.6.</span> <span class="toc-text">Level.32</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Level-33"><span class="toc-number">8.7.</span> <span class="toc-text">Level.33</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/27/MSServer/" title="MS SQL server 基礎知識整理"><img src="/img/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MS SQL server 基礎知識整理"/></a><div class="content"><a class="title" href="/2023/09/27/MSServer/" title="MS SQL server 基礎知識整理">MS SQL server 基礎知識整理</a><time datetime="2023-09-27T07:47:03.000Z" title="Created 2023-09-27 15:47:03">2023-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享"><img src="/img/bac.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CEH v12 報考心得&amp;想法分享"/></a><div class="content"><a class="title" href="/2023/08/27/CEH/" title="CEH v12 報考心得&amp;想法分享">CEH v12 報考心得&amp;想法分享</a><time datetime="2023-08-27T04:37:57.000Z" title="Created 2023-08-27 12:37:57">2023-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記"><div style="background: /img/12.jpgg"></div></a><div class="content"><a class="title" href="/2023/07/07/git%E8%88%87%E7%92%B0%E5%A2%83%E7%AD%86%E8%A8%98/" title="林林總總環境筆記">林林總總環境筆記</a><time datetime="2023-07-06T16:45:35.000Z" title="Created 2023-07-07 00:45:35">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/27/wargames/" title="bandit wargames"><img src="/img/bac.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="bandit wargames"/></a><div class="content"><a class="title" href="/2023/06/27/wargames/" title="bandit wargames">bandit wargames</a><time datetime="2023-06-26T16:24:08.000Z" title="Created 2023-06-27 00:24:08">2023-06-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/27/hello-world/" title="Hello World"><img src="/img/12.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2023/05/27/hello-world/" title="Hello World">Hello World</a><time datetime="2023-05-26T16:24:08.000Z" title="Created 2023-05-27 00:24:08">2023-05-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By sherry</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
